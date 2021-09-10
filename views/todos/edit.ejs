@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<body>
+<h2 class="page-header">Edit Task</h2>
+<form action="/todos/<%= locals.todo.id%>?_method=PUT" method="POST">
+  <%- include('_form_fields') %>
+  <div class="form-row form-row-end btn-row">
+    <a class="btn btn-danger" href="/todos/<%= locals.todo.id %>">Cancel</a>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </div>
+</form>
+</body>
+</html>

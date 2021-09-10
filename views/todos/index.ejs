@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<body>
+<h2 class="page-header">Search Tasks</h2>
+<form action="/todos" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Task</label>
+      <input type="text" name="name" value="<%= locals.searchOptions.name %>" />
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit>">Search</button>
+  </div>
+</form>
+<br />
+<% locals.todos.forEach(todo => { %>
+<div class="todo-row">
+  <div class="todo-name"><%= todo.name%></div>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/todos/<%= todo.id%>">View</a>
+    <a class="btn btn-primary" href="/todos/<%= todo.id%>/edit">Edit</a>
+    <a class="btn btn-primary" href="/todos/<%= todo.id%>">Delete</a>
+    <%- include('../partials/deleteForm', {url: `/todos/${todo.id}`}) %>
+  </div>
+</div>
+<% })%>
+</body>
+</html>

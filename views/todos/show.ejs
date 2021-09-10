@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<body>
+<h2 class="page-header"><%= locals.todo.name%></h2>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/todos/<%= locals.todo.id%>/edit">Edit</a>
+  <%- include('../partials/deleteForm', {url: `/todos/${todo.id}`})%>
+</div>
+</body>
+</html>
